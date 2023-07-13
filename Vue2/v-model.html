@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="../Vue2/vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="" />
+    </head>
+
+    <body>
+
+        <div id="app">
+            <h4>{{ msg }}</h4>
+            <!-- 'v-model' 只能运用于表单元素中 -->
+            <!-- input(radio, text, address, email......)    select    checkbox    textarea -->
+            <input type="text" v-model="msg" style="width: 100%;">
+        </div>
+
+    </body>
+    <script>
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '来咧'
+            },
+            methods: {}
+        });
+    </script>
+
+</html>
