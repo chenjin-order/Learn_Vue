@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="../Vue2/vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="" />
+        <style>
+            .inner {
+                height: 150px;
+                background-color: aquamarine;
+            }
+
+            .outer {
+                padding: 40px;
+                background-color: crimson;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="app">
+            <!-- '.stop' 阻止冒泡 -->
+            <!-- <div class="inner" @click="divHandler">
+
+                <input type="button" value="text" @click.stop="btnHandler">
+
+            </div> -->
+
+            <!-- '.prevent' 阻止默认行为 -->
+            <!-- <div>
+
+                <a href="http://www.baidu.com" @click.prevent="linkClick">百度</a>
+
+            </div> -->
+
+            <!-- '.capture' 实现捕获触发事件的机制 -->
+            <!-- <div class="inner" @click.capture="divHandler">
+
+                <input type="button" value="text" @click="btnHandler">
+
+            </div> -->
+
+            <!-- '.self' 实现只有点击当前元素，才会触发事件处理函数 -->
+            <!-- <div class="inner" @click.self="divHandler">
+
+                <input type="button" value="text" @click="btnHandler">
+
+            </div> -->
+
+            <!-- '.once' 只触发一次事件处理函数 -->
+            <!-- <a href="http://www.baidu.com" @click.prevent.once="linkClick">百度</a> -->
+
+
+            <!-- '.stop' 和 '.self' 的区别 -->
+            <!-- <div class="outer" @click="div1Handler">
+
+                <div class="inner" @click="divHandler">
+
+                    <input type="button" value="text" @click.stop="btnHandler">
+
+                </div>
+
+            </div> -->
+            <!-- '.self' 只会阻止自身冒泡行为，不会阻止其他冒泡行为 -->
+            <!-- <div class="outer" @click="div1Handler">
+
+                <div class="inner" @click.self="divHandler">
+
+                    <input type="button" value="text" @click="btnHandler">
+
+                </div>
+
+            </div> -->
+
+        </div>
+
+    </body>
+    <script>
+
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {
+                divHandler() {
+                    console.log('inner div触发')
+                },
+                div1Handler() {
+                    console.log('outer div触发')
+                },
+                btnHandler() {
+                    console.log('btn 触发')
+                },
+                linkClick() {
+                    console.log('链接点击事件 触发')
+                }
+            }
+        });
+    </script>
+
+</html>
