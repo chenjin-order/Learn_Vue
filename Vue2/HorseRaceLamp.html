@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="../Vue2/vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="" />
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="button" value="start" @click="lang">
+            <input type="button" value="stop" @click="stop">
+            <h4>{{msg}}</h4>
+        </div>
+
+    </body>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Horse Race Lamp ',
+                intervalId: null
+            },
+            methods: {
+                lang() {
+                    if (this.intervalId != null) return;
+                    this.intervalId = setInterval(() => {
+                        var start = this.msg.substring(0, 1)
+                        var end = this.msg.substring(1)
+                        this.msg = end + start
+                    }, 400)
+                },
+                stop() {
+                    clearInterval(this.intervalId)
+
+                    this.intervalId = null
+                }
+            }
+        })
+    </script>
+
+</html>
