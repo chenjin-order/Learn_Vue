@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="../Vue2/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="" />
+  </head>
+
+  <body>
+    <div id="app">
+
+      <p v-cloak>+++++{{msg}}-----</p>
+
+      <div>
+        {{msg2}}
+      </div>
+      <div v-html="msg2"></div>
+
+      <input type="button" value="按钮" :title="mytitle + ' ' + '省心'" v-on:click="show">
+    </div>
+
+  </body>
+  </body>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '123',
+        msg2: '<h1>什么都没有</h1>',
+        mytitle: '自定义Title'
+      },
+      methods: {
+        show: function () {
+          alert('不行')
+        }
+      }
+    })
+
+    // document.getElementById('btn').onclick = function () {
+    //   alert('杀软')
+    // }
+
+  </script>
+
+</html>
