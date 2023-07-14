@@ -43,24 +43,24 @@
             },
             methods: {
                 calc() {
-                    // switch (this.opt) {
-                    //     case '+':
-                    //         this.result = parseInt(this.n1) + parseInt(this.n2)
-                    //         break;
-                    //     case '-':
-                    //         this.result = parseInt(this.n1) - parseInt(this.n2)
-                    //         break;
-                    //     case '*':
-                    //         this.result = parseInt(this.n1) * parseInt(this.n2)
-                    //         break;
-                    //     case '/':
-                    //         this.result = parseInt(this.n1) / parseInt(this.n2)
-                    //         break;
-                    // }
+                    switch (this.opt) {
+                        case '+':
+                            this.result = parseInt(this.n1) + parseInt(this.n2)
+                            break;
+                        case '-':
+                            this.result = parseInt(this.n1) - parseInt(this.n2)
+                            break;
+                        case '*':
+                            this.result = parseInt(this.n1) * parseInt(this.n2)
+                            break;
+                        case '/':
+                            this.result = parseInt(this.n1) / parseInt(this.n2)
+                            break;
+                    }
 
-                    var codeStr = 'parseInt(this.n1)' + this.opt + 'parseInt(this.n2)'
+                    // var codeStr = 'parseInt(this.n1)' + this.opt + 'parseInt(this.n2)'
 
-                    this.result = eval(codeStr)
+                    // this.result = eval(codeStr)
                 }
             }
         });
