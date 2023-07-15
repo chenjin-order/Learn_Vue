@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="../Vue2/vue.js"></script>
+        <link rel="stylesheet" href="../Vue2/lib/bootstrap.css" />
+    </head>
+
+    <body>
+
+        <div id="app">
+
+            <div>
+
+                <div>
+
+                    <label>Id:</label>
+                    <input type="text" v-model="id">
+
+                    <label>Name:</label>
+                    <input type="text" v-model="name">
+
+                    <input type="button" value="添加" class="btn btn-primary" @click="add">
+
+                </div>
+
+            </div>
+
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Ctime</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in list" :key="item.id">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.ctime }}</td>
+                        <td>
+                            <a href="#">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+    </body>
+    <script>
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                list: [
+                    { id: 1, name: '奔驰', ctime: new Date().toISOString() },
+                    { id: 2, name: '宝马', ctime: new Date().toISOString() }
+                ]
+            },
+            methods: {
+                add() {
+                    this.list.push({ id: this.id, name: this.name, ctime: new Date().toISOString() })
+                    this.id = this.name = ''
+
+                }
+            }
+        });
+    </script>
+
+</html>

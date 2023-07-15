@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="../Vue2/vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="" />
+    </head>
+
+    <body>
+
+        <div id="app">
+
+            <!-- <p>{{ list[0] }}</p>
+            <p>{{ list[1] }}</p>
+            <p>{{ list[2] }}</p>
+            <p>{{ list[3] }}</p>
+            <p>{{ list[4] }}</p>
+            <p>{{ list[5] }}</p> -->
+
+            <p v-for="(item, i) in list"> 索引值: {{ i }} ------ 每一项: {{ item }}</p>
+
+        </div>
+
+    </body>
+    <script>
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                list: [1, 2, 3, 4, 5, 6]
+            },
+            methods: {}
+        });
+    </script>
+
+</html>

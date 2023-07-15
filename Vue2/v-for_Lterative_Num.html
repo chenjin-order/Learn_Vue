@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="../Vue2/vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="" />
+    </head>
+
+    <body>
+
+        <div id="app">
+
+            <!-- 'in' 后可以放  普通数组，对象数组，对象，还可以放  数字  -->
+            <!-- 若v-for 迭代数字，那么 count 值从 1 开始 -->
+            <p v-for="count in 10"> 这是第 {{ count }} 此循环 </p>
+
+        </div>
+
+    </body>
+    <script>
+
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {}
+        });
+    </script>
+
+</html>
