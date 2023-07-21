@@ -99,15 +99,11 @@
                     this.list.splice(index, 1)
                 },
                 searchByName() {
-                    let result = []
-                    for (let i = 0; i < this.list.length; i++) {
-                        // if (this.list[i].name.indexOf(this.keywords) != -1) {
-                        //     result.push(this.list[i])
-                        // }
+                    // 数组的 filter 方法，作用是循环指定的数组，并把满足回调函数中指定条件的“项”返回，从而得到一个新数组
+                    return this.list.filter((item) => {
+                        return item.name.includes(this.keywords)
+                    })
 
-                        if (this.list[i].name.includes(this.keywords)) result.push(this.list[i])
-                    }
-                    return result
                 }
             }
         });

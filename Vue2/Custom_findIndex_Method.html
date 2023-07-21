@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            Array.prototype.myFindIndex = function (callback) {
+                for (var i = 0; i < this.length; i++) {
+                    const result = callback(this[i])
+                    if (result) {
+                        return i
+                    }
+                }
+            }
+
+
+            var a = [1, 2, 3, 4, 5]
+
+            const i = a.myFindIndex(function (item) {
+                if (item === 3) {
+                    return true
+                }
+            })
+
+            console.log(i)
+        </script>
+    </body>
+
+</html>
